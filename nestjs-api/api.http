@@ -1,0 +1,36 @@
+GET http://localhost:3000/places?text=av governador valadares, betim, 1000
+
+###
+GET http://localhost:3005//places?text=belo%20horizonte,mg
+
+
+
+GET http://localhost:3005//places?text=belo%20horizonte,mg
+
+###
+ ChIJMyzPysqQpgARlznSOl55NVs
+@originId = ChIJmx-wX0rCpgARjxH_rJ8d5do
+@destinationId = ChIJTcM3WRKWpgARIBxMZeldEtM
+
+###
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+
+###
+POST http://localhost:3005/routes
+Content-Type: application/json
+
+{
+    "name": "rota 10",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+
+###
+POST http://localhost:3005/routes/6764813150d21c88769e0f31/start
+
+###
+GET http://localhost:3005/routes
+
+###
+GET http://localhost:3000/routes/676355c840892125aaeba9e8 
